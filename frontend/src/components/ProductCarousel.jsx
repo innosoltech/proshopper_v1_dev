@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { Carousel, Image } from "react-bootstrap";
-import Loader from "./Loader";
-import Message from "./Message";
-import { useGetTopProductsQuery } from "../slices/productsApiSlice";
+// import Loader from "./Loader";
+// import Message from "./Message";
+// import { useGetTopProductsQuery } from "../slices/productsApiSlice";
 
+// Note: product is picked from database for this carousel display method
 // const ProductCarousel = () => {
 //   const { data: products, isLoading, error } = useGetTopProductsQuery();
 
