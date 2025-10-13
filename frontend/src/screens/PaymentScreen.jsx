@@ -15,13 +15,17 @@ const PaymentScreen = () => {
   const navigate = useNavigate();
 
   const cart = useSelector((state) => state.cart);
-  const { shippingAddress } = cart;
+  const { shippingAddress, cartItems } = cart;
 
   useEffect(() => {
     if (Object.keys(shippingAddress).length === 0) {
       navigate("/shipping");
     }
-  }, [shippingAddress, navigate]);
+
+    if (cartItems.length === 0) {
+      navigate("/");
+    }
+  }, [shippingAddress, cartItems, navigate]);
 
   function submitHandler(event) {
     event.preventDefault();
