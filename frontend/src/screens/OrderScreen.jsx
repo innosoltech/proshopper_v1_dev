@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import {
   Row,
   Col,
@@ -236,7 +236,7 @@ const OrderScreen = () => {
               {order.orderItems.map((orderItem, index) => (
                 <ListGroup.Item key={index} className="card-strip">
                   <Row>
-                    <Col xs={3} sm={2}>
+                    <Col xs={2} sm={2} md={2}>
                       <Image
                         src={orderItem.image}
                         alt={orderItem.name}
@@ -246,14 +246,10 @@ const OrderScreen = () => {
                       />
                     </Col>
 
-                    {/* <Col xs={5} sm={6} md={7} className="product-title">
+                    <Col className="product-title">
                       <Link to={`/product/${orderItem.product}`}>
                         {orderItem.name}
                       </Link>
-                    </Col> */}
-
-                    <Col xs={5} sm={6} className="product-title">
-                      {orderItem.name}
                     </Col>
 
                     <Col xs={4} sm={4}>
