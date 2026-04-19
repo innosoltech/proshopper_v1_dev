@@ -30,6 +30,6 @@ router.route("/:id/deliver").put(protect, admin, updateOrderToDelivered);
 router.route("/:id/initiateTransaction").post(protect, initializeTrans);
 router.route("/:id/getcode").get(protect, getAccessCode);
 router.route("/:id/getreference").get(protect, admin, getReferenceCode);
-router.route("/paystackWebhook").post(addWebHook); // webhook route: event data received from paystack on this route
+router.route("/paystack").post(addWebHook); // webhook route: event data received from paystack on this route
 
 export default router;

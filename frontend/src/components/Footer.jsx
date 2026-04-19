@@ -7,7 +7,7 @@ const Footer = () => {
     <footer
       style={{
         background: "black",
-        borderRadius: "10px 10px 0 0",
+        // borderRadius: "10px 10px 0 0",
         color: "white",
       }}
     >
@@ -17,6 +17,9 @@ const Footer = () => {
             <p>GoShopper &copy; {currentYear}</p>
             <p style={{ color: "", fontSize: "small" }}>
               Customisable to your needs{" "}
+            </p>
+            <p style={{ color: "", fontSize: "x-small" }}>
+              Developed by: Caleb Selormey
             </p>
           </Col>
         </Row>

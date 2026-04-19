@@ -39,7 +39,6 @@ const PlaceOrderScreen = () => {
 
       dispatch(clearCartItems());
 
-      // Note: New code start: directs user to thank you page after order placement, if "Cash On Delivery"
       const paymentMethod = cart.paymentMethod;
 
       if (paymentMethod !== "Card / Mobile Money") {
@@ -47,10 +46,6 @@ const PlaceOrderScreen = () => {
       } else {
         navigate(`/order/${res._id}`);
       }
-      // New code end
-
-      // Note: original code
-      // navigate(`/order/${res._id}`);
     } catch (error) {
       toast.error(error);
     }

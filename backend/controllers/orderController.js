@@ -289,7 +289,6 @@ const verifyTrans = async function (req, res) {
     let { id } = req.params;
 
     const userOrder = await Order.findById(id);
-    // console.log(userOrder);
 
     // Handles a situation where the transaction has already been verified
     if (userOrder.paystack_transaction_status == "success") {
@@ -309,8 +308,6 @@ const verifyTrans = async function (req, res) {
         paystack_transaction_status: response.data.status,
         amountDonated: response.data.amount / 100,
       };
-
-      // console.log(data);
 
       await Order.findByIdAndUpdate(id, data);
 
@@ -394,15 +391,10 @@ const addWebHook = async function (req, res) {
   try {
     let data = req.body;
 
-    // console.log(data);
-
     const reference = data.data.reference;
 
     if (data.event == "charge.success") {
       const response = await chargeSuccess(data);
-
-      // res.send(response)
-      console.log({ message: response.message });
     } else {
       console.log({ message: "Payment not successful" });
     }
