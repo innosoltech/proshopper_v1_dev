@@ -7,7 +7,7 @@ const connectDB = async () => {
     const conn = await mongoose.connect(
       process.env.NODE_ENV == "development"
         ? process.env.MONGO_URI_LOCAL
-        : process.env.MONGO_URI
+        : process.env.MONGO_URI,
     );
     console.log(` MongoDB Connected: ${conn.connection.host} `.green.inverse);
   } catch (error) {
